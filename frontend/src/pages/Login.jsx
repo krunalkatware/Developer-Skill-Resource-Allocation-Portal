@@ -291,7 +291,42 @@ const Login = ({ onShowToast }) => {
                   </button>
                 </form>
 
-                <div className="mt-4 pt-3 border-top text-center text-secondary" style={{ borderColor: 'var(--border-subtle)', fontSize: '0.78rem' }}>
+                {/* Demo Credentials Note */}
+                <div
+                  className="mt-4 p-3 rounded-3"
+                  style={{
+                    backgroundColor: 'var(--primary-subtle)',
+                    border: '1px dashed var(--primary)',
+                    fontSize: '0.8rem',
+                  }}
+                >
+                  <div className="d-flex align-items-center gap-2 mb-2 fw-semibold" style={{ color: 'var(--primary)' }}>
+                    <i className="bi bi-info-circle-fill"></i>
+                    Demo Credentials — Click to auto-fill
+                  </div>
+                  <div className="d-flex flex-column gap-1">
+                    <button
+                      type="button"
+                      className="btn btn-sm w-100 text-start d-flex justify-content-between align-items-center"
+                      style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '6px', fontSize: '0.78rem', color: 'var(--text-primary)' }}
+                      onClick={() => handleQuickFill('admin@example.com', 'admin123')}
+                    >
+                      <span><i className="bi bi-shield-lock-fill me-2 text-primary"></i><strong>Admin</strong> — admin@example.com</span>
+                      <span className="text-muted">admin123</span>
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-sm w-100 text-start d-flex justify-content-between align-items-center"
+                      style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '6px', fontSize: '0.78rem', color: 'var(--text-primary)' }}
+                      onClick={() => handleQuickFill('rahul@example.com', 'dev123')}
+                    >
+                      <span><i className="bi bi-person-fill me-2 text-success"></i><strong>Developer</strong> — rahul@example.com</span>
+                      <span className="text-muted">dev123</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="mt-3 text-center text-secondary" style={{ fontSize: '0.78rem' }}>
                   Protected internal portal • Authorized organizational personnel only
                 </div>
               </div>
