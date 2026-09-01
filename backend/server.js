@@ -12,7 +12,13 @@ dotenv.config();
 const app = express();
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://developer-skill-resource-allocation.vercel.app'
+  ],
+  credentials: true
+}));
 
 // Body parser
 app.use(express.json());
